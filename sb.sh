@@ -70,7 +70,7 @@ ensure_proxy() {
 }
 
 start() {
-  if exists $1 ; then
+  if exists $C_NAME ; then
 
     echo "ERROR: $C_NAME already exists"
     echo "       - try 'sb $C_NAME (restart|stop) instead"
@@ -115,7 +115,7 @@ stop() {
 }
 
 execcommand() {
-  docker exec -it $2 $2
+  docker exec -it $1 $2
 
   echo "Executed: $2 in $2"
 }
